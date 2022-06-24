@@ -119,3 +119,11 @@
 
 # avarage = (ball1 + ball2 + ball3 + ball4) / 4
 # print(avarage)
+
+"""============================== 16-misol =============================="""
+count = int(input("Tayyorlamoqchi bo'lgan bulochkalaringiz sonini kiriting: "))
+shakar = count * 1.5/48
+un = count* 2 / 48
+yog = count / 48
+print('Siz', count, 'ta bulochka tayyorlashingiz uchun', shakar, 'stakan shakar,', un, 'stakan un va ', yog, "stakan yog' kerak. ")
+
