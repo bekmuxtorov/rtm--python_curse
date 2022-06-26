@@ -117,13 +117,15 @@
 # ball3 = int(input('Uchinchi baho: '))
 # ball4 = int(input('To\'inchi baho: '))
 
-# avarage = (ball1 + ball2 + ball3 + ball4) / 4
+# avarage = (ball1 + ba  ll2 + ball3 + ball4) / 4
 # print(avarage)
 
 """============================== 16-misol =============================="""
-count = int(input("Tayyorlamoqchi bo'lgan bulochkalaringiz sonini kiriting: "))
-shakar = count * 1.5/48
-un = count* 2 / 48
-yog = count / 48
-print('Siz', count, 'ta bulochka tayyorlashingiz uchun', shakar, 'stakan shakar,', un, 'stakan un va ', yog, "stakan yog' kerak. ")
+# count = int(input("Tayyorlamoqchi bo'lgan bulochkalaringiz sonini kiriting: "))
+# shakar = count * 1.5/48
+# un = count* 2 / 48
+# yog = count / 48
+# print(f"Siz {count},ta bulochka tayyorlashingiz uchun {shakar} stakan shakar, {un} stakan un va  yog stakan yog kerak.")
+
+
 
