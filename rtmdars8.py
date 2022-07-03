@@ -131,6 +131,7 @@ Created on Sun Jul  3 20:29:32 2022
 # print(f"Ikkalasiga ham qatnashadigon talabalar: {beysboll.intersection(basketboll)}")
 # print(f"Sport bilan shug'ullandigon talabalar: {basketboll.union(beysboll)}")
 # print(f"Faqat basketbol bilan shug'ullanadigon talabalar: {basketboll.difference(beysboll)}")
+print("Asadbek Muxtorov")
 
 
 
