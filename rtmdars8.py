@@ -58,7 +58,7 @@ Created on Sun Jul  3 20:29:32 2022
 # print(c_sonlar)
 
 """============================== 7 - masala =============================="""
-# # a.issubset(b) --- a to'plam b to'plamni kichik to'plami ekanligini tekshiradi.  
+# a.issubset(b) --- a to'plam b to'plamni kichik to'plami ekanligini tekshiradi.  
 # a_sonlar = {21,42}
 # b_sonlar = {21,75,48,85,42}
 
@@ -125,8 +125,12 @@ Created on Sun Jul  3 20:29:32 2022
 #     print("umumiy element mavjud.")
 
 """============================== 15 - masala =============================="""    
-beysboll = {"Asadbek","Lazizbek","Bekmuhammad","Rashidbek","Raxmatillo", "Hasan"}
-basketboll = {"Asadbek","Lazizbek","Bekmuhammad","Rashidbek","Tavvakalboy","Topvoldi","Botir"}
+# beysboll = {"Asadbek","Lazizbek","Bekmuhammad","Rashidbek","Raxmatillo", "Hasan"}
+# basketboll = {"Asadbek","Lazizbek","Bekmuhammad","Rashidbek","Tavvakalboy","Topvoldi","Botir"}
+
+# print(f"Ikkalasiga ham qatnashadigon talabalar: {beysboll.intersection(basketboll)}")
+# print(f"Sport bilan shug'ullandigon talabalar: {basketboll.union(beysboll)}")
+# print(f"Faqat basketbol bilan shug'ullanadigon talabalar: {basketboll.difference(beysboll)}")
 
 
 
