@@ -59,7 +59,7 @@ Created on 2022-07-17 16:06:58.990923
 
 """============================== 6 - masala ============================== """
 
-from random import randint,choice
+from random import randint, choice, choices
 def matem():
     trues = []
     falses = []
@@ -88,7 +88,9 @@ def matem():
             tanlov = int(input("Tanlovingizni kiriting: "))
 
         elif tanlov == 2:
-            ayrish()
+            t, f = ayrish()
+            trues = [i for i in t]
+            falses = [j for j in f]
             print(f"""__MENU__
             \n1 -- Qo'shish
             \n2 -- Ayrish
@@ -101,7 +103,10 @@ def matem():
 
 
         elif tanlov == 3:
-            kopaytirish()
+            t, f = kopaytirish()
+            trues = [i for i in t]
+            falses = [j for j in f]
+
             print(f"""__MENU__
             \n1 -- Qo'shish
             \n2 -- Ayrish
@@ -113,7 +118,10 @@ def matem():
             tanlov = int(input("Tanlovingizni kiriting: "))
 
         elif tanlov == 4:
-            bolish()
+            t, f = bolish()
+            trues = [i for i in t]
+            falses = [j for j in f]
+
             print(f"""__MENU__
             \n1 -- Qo'shish
             \n2 -- Ayrish
@@ -125,7 +133,10 @@ def matem():
             tanlov = int(input("Tanlovingizni kiriting: "))
 
         elif tanlov == 5:
-            aralash()
+            t, f = aralash()
+            trues = [i for i in t]
+            falses = [j for j in f]
+
             print(f"""__MENU__
             \n1 -- Qo'shish
             \n2 -- Ayrish
@@ -140,12 +151,12 @@ def matem():
             print("Kiritishda xatolik")
             tanlov = int(input("Qayta kiriting: "))
     print(f"Tog'ri javoblaringiz: {len(trues)} ball. ")
-    for true in trues:
-        print(true)
+    for j, true in enumerate(trues):
+        print(f"{j+1}) {true}")
 
     print("Xato javoblaringiz: ")
-    for false in falses:
-        print(false)
+    for j, false in enumerate(falses):
+        print(f"{j+1}) {false}")
 def qoshish():
     true = []
     false = []
@@ -159,7 +170,7 @@ def qoshish():
         if javob == (a+b):
             true.append(f"{a} + {b} = {javob} ✔")
         else:
-            false.append(f"{a} + {b} = {javob} ❓")
+            false.append(f"{a} + {b} = {javob} ❓ {(a+b)} ✔")
 
         i -= 1
 
@@ -178,7 +189,7 @@ def ayrish():
         if javob == (a - b):
             true.append(f"{a} - {b} = {javob} ✔")
         else:
-            false.append(f"{a} - {b} = {javob} ❓")
+            false.append(f"{a} - {b} = {javob} ❓ {(a - b)} ✔ ")
 
         i -= 1
 
@@ -197,7 +208,7 @@ def kopaytirish():
         if javob == (a * b):
             true.append(f"{a} * {b} = {javob} ✔")
         else:
-            false.append(f"{a} * {b} = {javob} ❓")
+            false.append(f"{a} * {b} = {javob} ❓ {(a * b)} ✔ ")
 
         i -= 1
 
@@ -207,16 +218,78 @@ def bolish():
     true = []
     false = []
     i = 4
-    while True:
-        if i == 0:
-            break
+    while i > 0:
         a = randint(100, 200)
         b = randint(1, 100)
+        while a % b != 0:
+            a = randint(100, 200)
+            b = randint(1, 100)
+
         javob = int(input(f"{a} / {b} = "))
         if javob == (a / b):
             true.append(f"{a} / {b} = {javob} ✔")
         else:
-            false.append(f"{a} / {b} = {javob} ❓")
+            false.append(f"{a} / {b} = {javob} ❓ {int(a / b)} ✔")
+
+        i -= 1
+
+    return true, false
+
+def aralash():
+    """
+    1 - qoshish
+    2 - ayrish
+    3 - ko'paytirish
+    4 - bo'lish
+    """
+    true = []
+    false = []
+    i = 5
+    while i > 0:
+        simvols = list(range(1, 5))
+        ehtimollik = [4,2,1,1]
+        simvol = choices(simvols, ehtimollik)
+        simvol = simvol[0]
+
+        if simvol == 1:
+            a = randint(1, 100)
+            b = randint(1, 100)
+            javob = int(input(f"{a} + {b} = "))
+            if javob == (a + b):
+                true.append(f"{a} + {b} = {javob} ✔")
+            else:
+                false.append(f"{a} + {b} = {javob} ❓ {(a - b)} ✔ ")
+
+        elif simvol == 2:
+            a = randint(1, 100)
+            b = randint(1, 100)
+            javob = int(input(f"{a} - {b} = "))
+            if javob == (a - b):
+                true.append(f"{a} - {b} = {javob} ✔")
+            else:
+                false.append(f"{a} - {b} = {javob} ❓ {(a - b)} ✔ ")
+
+        elif simvol == 3:
+            a = randint(100, 200)
+            b = randint(1, 100)
+            while a % b != 0:
+                a = randint(100, 200)
+                b = randint(1, 100)
+
+            javob = int(input(f"{a} / {b} = "))
+            if javob == (a / b):
+                true.append(f"{a} / {b} = {javob} ✔ ")
+            else:
+                false.append(f"{a} / {b} = {javob} ❓ {int(a / b)} ✔")
+
+        elif simvol == 4:
+            a = randint(1, 20)
+            b = randint(1, 20)
+            javob = int(input(f"{a} * {b} = "))
+            if javob == (a * b):
+                true.append(f"{a} * {b} = {javob} ✔")
+            else:
+                false.append(f"{a} * {b} = {javob} ❓ {(a * b)} ✔")
 
         i -= 1
 
